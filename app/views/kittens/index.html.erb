@@ -1,2 +1,18 @@
-<h1>Kittens#index</h1>
-<p>Find me in app/views/kittens/index.html.erb</p>
+<div class="container">
+  <%# binding.pry %>
+  <% if @kittens[0].nil? %>
+    <div id="no-flights">
+      <%= link_to "Please add a kitten", new_kitten_path %>
+    </div>
+  <% else %>
+    <% @kittens.each do |kitten| %>
+      <div class="card">
+        <p>Kitten Name: <%= kitten.name.capitalize %></p>
+        <p>Age: <%= kitten.age %></p>
+        <p>Cuteness: <%= kitten.cuteness %></p>
+        <p>Softness: <%= kitten.softness %></p>
+        <%= link_to "View this kitten", kitten_path(kitten) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
