@@ -1,24 +1,29 @@
-# README
+# odin-kittens
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+------------------------
 
-* Configuration
 
-* Database creation
+This was a project completed for [The Odin Project's](https://www.theodinproject.com/) Ruby on Rails course. See the project details [here](https://www.theodinproject.com/lessons/ruby-on-rails-kittens-api).
 
-* Database initialization
+Created with: 
 
-* How to run the test suite
+* Ruby 3.1.2
 
-* Services (job queues, cache servers, search engines, etc.)
+* Rails 7.0.4
 
-* Deployment instructions
+* Database: Postgresql
 
-* ...
+
+Gems:
+
+* pry
+
+* rspec
+
+* capybara
+
+* webdrivers
+
