@@ -1,0 +1,27 @@
+<%= form_with model: @kitten do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, style: 'text-transform: capitalize;' %>
+  <% @kitten.errors.full_messages_for(:name).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  <% @kitten.errors.full_messages_for(:age).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <%= f.label :cuteness %>
+  <%= f.text_field :cuteness %>
+  <% @kitten.errors.full_messages_for(:cuteness).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <%= f.label :softness %>
+  <%=  f.text_field :softness %>
+  <% @kitten.errors.full_messages_for(:softness).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
