@@ -8,8 +8,15 @@ class KittensController < ApplicationController
   end
 
   def new
+    @kitten = Kitten.new
+  end
+
+  def create
   end
 
   def edit
+  end
+
+  def destroy
   end
 end
