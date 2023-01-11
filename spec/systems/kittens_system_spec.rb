@@ -1,22 +1,21 @@
 require 'rails_helper'
 
-RSpec.describe 'Adding a kitten', type: :system do
-  before do
-    visit new_kitten_path
-  end
-
-  xscenario 'valid inputs' do    
+RSpec.describe 'Add a kitten', type: :system do
+    
+  scenario 'valid inputs' do   
+    visit new_kitten_path 
     fill_in 'Name', with: 'Lion-o'
-    fill_in 'age', with: '19'
-    fill_in 'cuteness', with: 10
-    fill_in 'softness', with: 10
-    click_on 'Add Kitten'
+    fill_in 'Age', with: '19'
+    fill_in 'Cuteness', with: 10
+    fill_in 'Softness', with: 10
+    click_on 'Create Kitten'
 
-    expect(page).to have_content('Kittens')
+    expect(page).to have_content('Lion-o')
   end
 
-  xscenario 'invalid inputs' do
-    click_on 'Add Kitten'
+  scenario 'invalid inputs' do
+    visit new_kitten_path
+    click_on 'Create Kitten'
 
     expect(page).to have_content("Name can't be blank")
   end
