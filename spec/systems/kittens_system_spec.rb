@@ -34,14 +34,12 @@ RSpec.describe 'Updating a kitten', type: :system do
 end
 
 RSpec.describe 'Deleting a kitten', type: :system do
-  xscenario 'success' do
-    Kitten.create!(name: 'Bob', age: 15, cuteness: 10, softness: 10)
-    visit kitten_path
-    fill_in 'Name', with: "Bill"
-    expect(page).to have_content('Bill')
-
-    click_on 'Delete'
+  scenario 'success' do
+    kitten = Kitten.create!(name: "Bill", age: 15, cuteness: 10, softness: 10)
+    visit kitten_path(kitten.id)
+    click_on "Delete"
     accept_alert
+
     expect(page).not_to have_content('Bob')
   end
 end
