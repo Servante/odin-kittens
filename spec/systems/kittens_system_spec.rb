@@ -22,24 +22,23 @@ RSpec.describe 'Add a kitten', type: :system do
 end
 
 RSpec.describe 'Updating a kitten', type: :system do
-  before do 
-    kitten = create(:kitten)
+
+  scenario 'valid inputs' do
+    kitten = Kitten.create!(name: "Bill", age: 15, cuteness: 10, softness: 10)
     visit edit_kitten_path(kitten.id)
-  end
-
-  xscenario 'valid inputs' do
     fill_in 'Name', with: "bob"
-    click_on 'Save Edits'
+    click_on 'Update Kitten'
 
-    expect(page).to have_content('Kittens')
+    expect(page).to have_content("Bob")
   end
 end
 
 RSpec.describe 'Deleting a kitten', type: :system do
   xscenario 'success' do
-    Kitten.create!(name: 'Bob')
+    Kitten.create!(name: 'Bob', age: 15, cuteness: 10, softness: 10)
     visit kitten_path
-    expect(page).to have_content('Bob')
+    fill_in 'Name', with: "Bill"
+    expect(page).to have_content('Bill')
 
     click_on 'Delete'
     accept_alert
