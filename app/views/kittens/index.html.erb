@@ -1,7 +1,7 @@
 <div class="container">
   <%# binding.pry %>
   <% if @kittens[0].nil? %>
-    <div id="no-flights">
+    <div id="no-kittens">
       <%= link_to "Please add a kitten", new_kitten_path %>
     </div>
   <% else %>
@@ -14,6 +14,9 @@
         <%= link_to "View this kitten", kitten_path(kitten) %>
       </div>
       <div><%= link_to "Create Kitten", new_kitten_path %></div>
+    <% end %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
     <% end %>
   <% end %>
 </div>

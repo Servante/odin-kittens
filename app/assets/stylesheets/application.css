@@ -31,7 +31,7 @@
   gap: 12px;
  }
 
- #no-flights {
+ #no-kittens {
   border: 2px solid black;
   padding: 8px;
  }
@@ -40,4 +40,12 @@
   border: 2px solid black;
   padding: 16px;
   width: 250px; 
+ }
+
+ .notice {
+  color: yellow; 
+ }
+
+ .error {
+  color: maroon;
  }

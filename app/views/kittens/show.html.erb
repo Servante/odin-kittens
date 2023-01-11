@@ -1,4 +1,7 @@
 <div class="container">
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+  <% end %>
   <div class="card">
     <p>Kitten Name: <%= @kitten.name.capitalize %></p>
     <p>Age: <%= @kitten.age %></p>
