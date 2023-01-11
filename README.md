@@ -1,6 +1,6 @@
 # odin-kittens
 
-
+A basic CRUD application and RESTful API. Users will be able to view, create, edit, and destroy a kitten object. Responses in JSON and XML available for GET requests. 
 
 
 ------------------------
@@ -23,7 +23,5 @@ Gems:
 
 * rspec
 
-* capybara
-
-* webdrivers
+* capybara 
 
